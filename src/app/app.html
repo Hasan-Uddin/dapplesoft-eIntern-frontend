@@ -1,6 +1,20 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world! (testing tailwind)
-</h1>
+<div class="flex h-screen">
 
-<p-button label="prime ng, example"></p-button>
-<router-outlet></router-outlet>
+  <!--Sidebar-->
+  <app-side-nav [isNavExpanded]="isNavExpanded" [isMobile]="isMobile" (toggle)="toggleSidebar()"></app-side-nav>
+
+  <!--Main-->
+  <main class="flex-1 flex flex-col overflow-auto bg-gray-50">
+
+    <!--Header-->
+    <app-header [isNavExpanded]="isNavExpanded" (toggleNav)="toggleSidebar()"></app-header>
+
+    <!--Router content/body -->
+    <section class="p-4 w-fit">
+      <router-outlet></router-outlet>
+    </section>
+
+    <!--Footer -->
+    <app-footer class="mt-auto" />
+  </main>
+</div>
