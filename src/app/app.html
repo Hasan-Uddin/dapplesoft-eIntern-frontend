@@ -10,11 +10,14 @@
     <app-header [isNavExpanded]="isNavExpanded" (toggleNav)="toggleSidebar()"></app-header>
 
     <!--Router content/body -->
-    <section class="p-4 w-fit">
-      <router-outlet></router-outlet>
+      <section class="flex-1 flex items-center justify-center p-6">
+      <div class="w-full max-w-5xl mx-auto">
+        <router-outlet></router-outlet>
+      </div>
     </section>
 
     <!--Footer -->
     <app-footer class="mt-auto" />
   </main>
+  
 </div>
